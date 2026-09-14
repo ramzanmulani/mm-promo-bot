@@ -1,0 +1,68 @@
+name: Propose post
+
+on:
+  schedule:
+    # 08:00 UTC = 13:30 IST, daily. The 3-day cadence is enforced in code
+    # from state/history.json, not by cron, so a missed run cannot drift
+    # the schedule or double-post.
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ignore the 3-day gate"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Render + Discord preview only, never post publicly"
+        type: boolean
+        default: true
+      post_id:
+        description: "Specific post id (e.g. belt-04). Blank = next in rotation."
+        type: string
+        default: ""
+
+concurrency:
+  group: mm-promo-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+
+      - name: Render and send for approval
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_POST_WEBHOOK_URL: ${{ secrets.DISCORD_POST_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          PUBLIC_BASE_URL: ${{ secrets.PUBLIC_BASE_URL }}
+        run: |
+          python -m bot.propose \
+            ${{ inputs.force == true && '--force' || '' }} \
+            ${{ inputs.dry_run == true && '--dry-run' || '' }} \
+            ${{ inputs.post_id != '' && format('--post-id {0}', inputs.post_id) || '' }}
+
+      - name: Commit image + state
+        run: |
+          git config user.name  "mm-promo-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/img state
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "promo: queue post [skip ci]"
+            git push
+          fi

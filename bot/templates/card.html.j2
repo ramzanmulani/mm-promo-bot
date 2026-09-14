@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face{font-family:"Outfit";font-style:normal;font-weight:100 900;
+    font-display:block;src:url({{ font_outfit }}) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:100 900;
+    font-display:block;src:url({{ font_inter }}) format("woff2")}
+  :root{
+    --bg:{{ b.bg }};
+    --bg2:{{ b.bg_2 }};
+    --gold:{{ b.gold }};
+    --goldsoft:{{ b.gold_soft }};
+    --ink:{{ b.ink_on_gold }};
+    --text:{{ b.text }};
+    --muted:{{ b.muted }};
+    --pad:7vw;
+    --padtop:7.5vw;
+    --padbot:6.5vw;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"{{ b.body_font }}","Segoe UI",system-ui,-apple-system,sans-serif;
+    overflow:hidden;
+  }
+  .card{position:relative;width:100vw;height:100vh;overflow:hidden}
+
+  /* Story = 9:16. Instagram's own UI sits over the top ~14% and bottom
+     ~16% of the screen, so everything stays inside that safe band. */
+  body.story{--pad:9vw;--padtop:20vw;--padbot:22vw}
+  body.story .inner{justify-content:center;gap:9vw}
+  body.story h1{font-size:11vw}
+  body.story .sub{font-size:3.9vw;max-width:100%}
+  body.story .bullet{font-size:3.8vw}
+  body.story .dot{width:2vw;height:2vw;margin-top:1.4vw}
+  body.story .eyebrow{font-size:2.9vw;padding:1.6vw 3.6vw 1.5vw}
+  body.story .cta{font-size:4.3vw;padding:3.4vw 6vw}
+  body.story .cta .arrow{font-size:3.9vw}
+  body.story .rule{width:20vw;height:1vw}
+  body.story .mark{width:10vw;height:10vw;border-radius:3vw;font-size:4.3vw}
+  body.story .brandname{font-size:3.8vw}
+  body.story .handle{font-size:3.1vw}
+  body.story .site{display:none}
+  body.story .bullets{gap:2.8vw}
+  body.story .foot{padding-top:4vw}
+
+  /* Story has no caption and no link sticker - Meta gives no API for
+     either - so the destination URL has to be readable on the image. */
+  .storylink{display:none}
+  body.story .storylink{
+    display:block;font-size:3.4vw;font-weight:600;color:var(--gold);
+    letter-spacing:.01em;
+  }
+  body.story .storylink .hint{
+    display:block;color:var(--muted);font-weight:400;font-size:2.9vw;
+    margin-top:1vw;letter-spacing:.02em;
+  }
+
+  /* ---- atmosphere -------------------------------------------------- */
+  .glow{position:absolute;inset:0;pointer-events:none}
+  .glow::before{
+    content:"";position:absolute;right:-22%;top:-18%;
+    width:78vw;height:78vw;border-radius:50%;
+    background:radial-gradient(circle at center,
+      rgba(217,174,107,.28) 0%,
+      rgba(217,174,107,.10) 38%,
+      rgba(217,174,107,0) 68%);
+    filter:blur(1px);
+  }
+  .glow::after{
+    content:"";position:absolute;left:-30%;bottom:-30%;
+    width:70vw;height:70vw;border-radius:50%;
+    background:radial-gradient(circle at center,
+      rgba(217,174,107,.10) 0%, rgba(217,174,107,0) 65%);
+  }
+  .grain{
+    position:absolute;inset:0;opacity:.05;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)' opacity='.5'/></svg>");
+  }
+  /* animation-arc motif: spacing dots along a curve */
+  .arc{position:absolute;inset:0;pointer-events:none;opacity:.95}
+
+  /* ---- content ----------------------------------------------------- */
+  .inner{
+    position:relative;z-index:2;
+    height:100%;padding:var(--padtop) var(--pad) var(--padbot);
+    display:flex;flex-direction:column;justify-content:space-between;gap:6vw;
+  }
+  .top{display:flex;flex-direction:column;gap:3.2vw}
+  .eyebrow{
+    align-self:flex-start;
+    font-family:"{{ b.body_font }}",sans-serif;
+    font-size:2.05vw;font-weight:600;letter-spacing:.30em;
+    text-transform:uppercase;color:var(--gold);
+    border:0.18vw solid rgba(217,174,107,.45);
+    border-radius:100px;padding:1.15vw 2.6vw 1.05vw;
+    background:rgba(217,174,107,.07);
+  }
+  h1{
+    font-family:"{{ b.display_font }}","Segoe UI",sans-serif;
+    font-weight:800;font-size:9.4vw;line-height:1.02;
+    letter-spacing:-.022em;white-space:pre-line;
+    text-wrap:balance;
+  }
+  .rule{width:14vw;height:.75vw;border-radius:100px;
+    background:linear-gradient(90deg,var(--gold),rgba(217,174,107,0));}
+  .sub{
+    font-size:2.85vw;line-height:1.42;color:var(--muted);
+    max-width:84%;font-weight:400;
+  }
+
+  .bullets{display:flex;flex-direction:column;gap:2.1vw}
+  .bullet{display:flex;align-items:flex-start;gap:2.1vw;
+    font-size:2.75vw;line-height:1.34;font-weight:500;color:var(--text)}
+  .dot{flex:0 0 auto;width:1.5vw;height:1.5vw;margin-top:1.05vw;
+    border-radius:50%;background:var(--gold);
+    box-shadow:0 0 0 .55vw rgba(217,174,107,.16)}
+
+  .bottom{display:flex;flex-direction:column;gap:3.4vw}
+  .cta{
+    align-self:flex-start;
+    background:linear-gradient(180deg,var(--goldsoft),var(--gold));
+    color:var(--ink);font-family:"{{ b.display_font }}",sans-serif;
+    font-weight:700;font-size:3.1vw;letter-spacing:-.005em;
+    padding:2.5vw 4.4vw;border-radius:100px;
+    box-shadow:0 1.6vw 4vw rgba(217,174,107,.20);
+    display:flex;align-items:center;gap:1.8vw;
+  }
+  .cta .arrow{font-size:2.8vw;transform:translateY(-.1vw)}
+
+  .foot{
+    border-top:.16vw solid rgba(244,241,234,.12);
+    padding-top:3vw;display:flex;align-items:center;gap:2.4vw;
+  }
+  .mark{
+    width:7.2vw;height:7.2vw;border-radius:2.1vw;flex:0 0 auto;
+    background:linear-gradient(150deg,var(--goldsoft),var(--gold));
+    color:var(--ink);display:flex;align-items:center;justify-content:center;
+    font-family:"{{ b.display_font }}",sans-serif;font-weight:800;
+    font-size:3.1vw;letter-spacing:-.04em;
+  }
+  .mark img{width:100%;height:100%;object-fit:cover;border-radius:2.1vw}
+  .names{display:flex;flex-direction:column;gap:.35vw}
+  .brandname{font-family:"{{ b.display_font }}",sans-serif;
+    font-weight:700;font-size:2.75vw;letter-spacing:-.01em}
+  .handle{font-size:2.25vw;color:var(--muted);font-weight:500}
+  .spacer{flex:1}
+  .site{font-size:2.25vw;color:var(--gold);font-weight:600;text-align:right}
+</style>
+</head>
+<body class="{{ variant }}">
+<div class="card" id="card">
+  <div class="glow"></div>
+
+  <svg class="arc" viewBox="0 0 1000 1250" preserveAspectRatio="none" aria-hidden="true">
+    <path id="arcline" fill="none" stroke="rgba(217,174,107,0.20)" stroke-width="2.5"/>
+    <g id="arcdots" fill="{{ b.gold }}"></g>
+  </svg>
+
+  <div class="grain"></div>
+
+  <div class="inner" id="inner">
+    <div class="top">
+      <div class="eyebrow">{{ post.eyebrow }}</div>
+      <h1 id="headline">{{ post.headline }}</h1>
+      <div class="rule"></div>
+      {% if post.sub %}<div class="sub">{{ post.sub }}</div>{% endif %}
+    </div>
+
+    <div class="bottom">
+      {% if post.bullets %}
+      <div class="bullets">
+        {% for bl in post.bullets %}
+        <div class="bullet"><span class="dot"></span><span>{{ bl }}</span></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="cta">{{ post.cta }}<span class="arrow">&#8594;</span></div>
+
+      {% if cta_url_short %}
+      <div class="storylink">{{ cta_url_short }}
+        <span class="hint">link in bio &middot; {{ b.site_label }}</span>
+      </div>
+      {% endif %}
+
+      <div class="foot">
+        <div class="mark">{% if logo_data_uri %}<img src="{{ logo_data_uri }}" alt="">{% else %}MM{% endif %}</div>
+        <div class="names">
+          <div class="brandname">{{ b.name }}</div>
+          <div class="handle">{{ b.handle }}</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="site">{{ b.site_label }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- animation-arc spacing dots (ease-out = classic arc spacing) -------
+(function drawArc(){
+  const dots = document.querySelector('#arcdots');
+  const line = document.querySelector('#arcline');
+  if (!dots || !line) return;
+  const at = (t) => {
+    const e = 1 - Math.pow(1 - t, 2.1);          // ease-out = arc spacing
+    return [ -60 + e * 1180,
+             1120 - Math.sin(e * Math.PI * 0.55) * 540 - e * 380 ];
+  };
+  let d = '';
+  for (let i = 0; i <= 120; i++) {
+    const [x, y] = at(i / 120);
+    d += (i ? ' L ' : 'M ') + x.toFixed(1) + ' ' + y.toFixed(1);
+  }
+  line.setAttribute('d', d);
+  const N = 26, out = [];
+  for (let i = 0; i < N; i++) {
+    const t = i / (N - 1), [x, y] = at(t);
+    out.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2.6 + t * 5.0).toFixed(1)}" opacity="${(0.08 + t * 0.26).toFixed(3)}"/>`);
+  }
+  dots.innerHTML = out.join('');
+})();
+
+// ---- shrink-to-fit: never let long copy overflow the card -------------
+window.__fit = function () {
+  const inner = document.getElementById('inner');
+  const h1 = document.getElementById('headline');
+  const vw = window.innerWidth / 100;
+  const isStory = document.body.classList.contains('story');
+  const MIN  = isStory ? 6.0  : 5.2;
+  const MAX  = isStory ? 13.0 : 11.0;
+  const STEP = 0.2;
+  // Never grow right up to the edge: keep AIR vw of breathing room so the
+  // card reads as designed instead of as a wall of type.
+  const AIR = isStory ? 3.0 : 5.0;
+  const slack = () => inner.clientHeight - inner.scrollHeight;
+  // Horizontal overflow matters as much as vertical: a long word in the
+  // headline must not run off the side of the card.
+  const wide = () => h1.scrollWidth > h1.clientWidth + 1;
+  const fits = (reserve) =>
+    slack() >= (reserve || 0) * vw - 1 && !wide();
+  const set = (v) => { h1.style.fontSize = (v * vw) + 'px'; };
+
+  let size = isStory ? 11.0 : 9.4;
+  set(size);
+  if (fits(AIR)) {                      // grow into the empty space
+    while (size < MAX) {
+      set(size + STEP);
+      if (!fits(AIR)) { set(size); break; }
+      size += STEP;
+    }
+  } else {                              // long copy: shrink to fit
+    while (!fits(0) && size > MIN) { size -= STEP; set(size); }
+  }
+  if (!fits(0)) {                       // still tight: ease the body copy
+    document.querySelectorAll('.bullet, .sub').forEach(el => {
+      el.style.fontSize = ((isStory ? 3.3 : 2.45) * vw) + 'px';
+    });
+  }
+  return { headlineVw: +size.toFixed(2),
+           overflow: -slack(),
+           slackVw: +(slack() / vw).toFixed(1) };
+};
+</script>
+</body>
+</html>

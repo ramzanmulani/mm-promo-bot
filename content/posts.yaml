@@ -1,0 +1,227 @@
+# ============================================================
+# The content deck. Bot cycles through these in order.
+# Add / edit freely - no code change needed.
+#
+# Keep headline <= 22 chars per line-ish (renderer auto-fits, but short = strong).
+# {animbelt} {site} {mentorship} {courses} {discord} get replaced with real links.
+# ============================================================
+
+mentorship:
+  - id: mentor-01
+    eyebrow: "1:1 MENTORSHIP"
+    headline: "Learn animation\nfrom a film\nanimator."
+    sub: "14+ years. Love and Monsters. Finch. Kingsglaive. Trollhunters."
+    bullets:
+      - "Live 1:1 sessions, not recorded lectures"
+      - "Your shots, reviewed frame by frame"
+      - "First demo session is free"
+    cta: "Book a free demo"
+    cta_link: mentorship
+    caption_hook: "Most animation courses teach you software. Almost none teach you how a shot actually gets approved in a studio."
+    caption_body: |
+      I've spent 14+ years animating creatures and characters on films like Love and Monsters, Finch, Kingsglaive and Trollhunters.
+
+      In my 1:1 mentorship I don't hand you a playlist. We sit on your shot, in your file, and I show you exactly what a supervisor would flag - weight, timing, arcs, silhouette, the stuff that decides whether a shot ships or comes back.
+
+      First demo session is free. Come with a shot, leave with a plan.
+    hashtags: ["animation", "3danimation", "mayaanimation", "characteranimation", "creatureanimation", "animationmentor", "vfx", "animationtips", "animator", "learnanimation"]
+
+  - id: mentor-02
+    eyebrow: "1:1 MENTORSHIP"
+    headline: "Your reel isn't\nweak. It's\nunfocused."
+    sub: "Portfolio review + a shot plan that actually gets you hired."
+    bullets:
+      - "Honest, studio-level reel feedback"
+      - "We pick the 3 shots worth finishing"
+      - "Free demo session to start"
+    cta: "Get your reel reviewed"
+    cta_link: mentorship
+    caption_hook: "Nobody gets rejected for having too few shots. They get rejected for having the wrong ones."
+    caption_body: |
+      A reel with 3 strong shots beats a reel with 9 average ones, every single time. Recruiters stop watching in 12 seconds.
+
+      In mentorship I go through your reel the way a lead would: what stays, what gets cut, what gets rebuilt, and in what order - so you stop spending months polishing shots that were never going to land you the job.
+
+      Book the free demo and bring your current reel.
+    hashtags: ["animationreel", "demoreel", "animationportfolio", "3danimation", "mayaanimation", "characteranimation", "animationjobs", "vfx", "animationmentor", "animator"]
+
+  - id: mentor-03
+    eyebrow: "CREATURE ANIMATION"
+    headline: "Quadrupeds\nare where\nreels die."
+    sub: "Weight, contact, overlap - taught by a working creature animator."
+    bullets:
+      - "Real production creature workflow"
+      - "Reference breakdown to final polish"
+      - "1:1, on your own shot"
+    cta: "Start with a free demo"
+    cta_link: mentorship
+    caption_hook: "Bipeds get you noticed. Creatures get you hired."
+    caption_body: |
+      Very few animators can sell a four-legged run. Weight transfer, contact timing, spine overlap, drag on the tail - get one wrong and the whole shot reads like a toy.
+
+      Creature animation is what I've done for over 14 years on shows like Love and Monsters, Finch and Trollhunters, and it's what I teach 1:1 - on your shot, in your file, at your pace.
+
+      First session is a free demo.
+    hashtags: ["creatureanimation", "quadruped", "animalanimation", "3danimation", "mayaanimation", "animationmentor", "vfx", "characteranimation", "animationtips", "animator"]
+
+  - id: mentor-04
+    eyebrow: "1:1 MENTORSHIP"
+    headline: "Stop guessing\nwhy your shot\nfeels wrong."
+    sub: "Live shot reviews with frame-by-frame notes you can act on."
+    bullets:
+      - "Arcs, spacing, weight - diagnosed live"
+      - "You leave with fixes, not theory"
+      - "Free demo session, no card needed"
+    cta: "Book your free demo"
+    cta_link: mentorship
+    caption_hook: "\"Something feels off\" is not feedback. It's a symptom."
+    caption_body: |
+      Every animator has stared at a shot for two hours knowing it's broken and not knowing where. Usually it's one of four things - spacing, arcs, weight, or a pose that never read in the first place.
+
+      In a 1:1 session we find the actual cause in minutes instead of days, and you walk away knowing how to spot it yourself next time.
+
+      Free demo session to start. Bring the shot that's annoying you.
+    hashtags: ["animationtips", "mayaanimation", "3danimation", "characteranimation", "animationmentor", "animationstudent", "vfx", "animation", "animator", "learnanimation"]
+
+  - id: mentor-05
+    eyebrow: "PRE-RECORDED COURSES"
+    headline: "Learn at 2am\nif that's when\nyou animate."
+    sub: "Structured animation courses you keep forever."
+    bullets:
+      - "Full workflow, start to polish"
+      - "Watch at your own pace"
+      - "Upgrade to 1:1 whenever you want"
+    cta: "Browse the courses"
+    cta_link: courses
+    caption_hook: "Not everyone can do live sessions. So the whole workflow is recorded too."
+    caption_body: |
+      The pre-recorded courses cover the same process I use on production shots - reference, blocking, spacing, polish - laid out step by step so you can follow along whenever you actually have time to animate.
+
+      Start there, and move to 1:1 mentorship when you want your own shots reviewed.
+    hashtags: ["animationcourse", "learnanimation", "mayaanimation", "3danimation", "characteranimation", "animationtutorial", "animationstudent", "vfx", "animator", "onlinecourse"]
+
+  - id: mentor-06
+    eyebrow: "1:1 MENTORSHIP"
+    headline: "From student\nreel to studio\nready."
+    sub: "A clear path, reviewed by someone who's shipped on features."
+    bullets:
+      - "Where you are vs where studios hire"
+      - "Shot-by-shot roadmap"
+      - "Free demo session first"
+    cta: "Book a free demo"
+    cta_link: mentorship
+    caption_hook: "The gap between a student reel and a hire-able reel is smaller than you think - and more specific than you think."
+    caption_body: |
+      It's usually 3 things: shot selection, body mechanics, and polish discipline. Not talent. Not years.
+
+      In mentorship we map exactly where your work sits today, what studios are actually looking at, and the shortest honest route between the two.
+
+      First demo session is free.
+    hashtags: ["animationmentor", "demoreel", "animationjobs", "3danimation", "mayaanimation", "characteranimation", "animationstudent", "vfx", "animator", "learnanimation"]
+
+animbelt:
+  - id: belt-01
+    eyebrow: "ANIMBELT FOR MAYA"
+    headline: "Built by an\nanimator who\ngot tired."
+    sub: "One toolkit for the busywork between you and the actual animation."
+    bullets:
+      - "Pose & anim library, retarget, curve tools"
+      - "Maya 2022 - 2027"
+      - "Rs 5,000 one-time - lifetime, 2 devices"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "I built AnimBelt because I was losing hours a week to things Maya should already do."
+    caption_body: |
+      Pose libraries, retargeting, curve cleanup, camera splits, reference playback - all the small repetitive jobs that sit between you and the part you actually enjoy.
+
+      One toolkit. One install. Rs 5,000 one-time, lifetime licence, 2 devices, and it works across Maya 2022 to 2027.
+    hashtags: ["maya", "autodeskmaya", "mayaanimation", "animationtools", "3danimation", "animbelt", "characteranimation", "vfx", "animationworkflow", "animator"]
+
+  - id: belt-02
+    eyebrow: "ANIMBELT / MM LIBRARY"
+    headline: "Save the pose\nonce. Use it\nforever."
+    sub: "A pose and animation library that survives rigs, namespaces and references."
+    bullets:
+      - "Poses, clips and selection sets"
+      - "Works across referenced rigs"
+      - "Inside AnimBelt - no extra cost"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "How many times have you re-posed the same hand this month?"
+    caption_body: |
+      MM Library inside AnimBelt stores poses, animation clips and selection sets, and applies them cleanly across referenced rigs and namespaces - the place most pose tools fall apart.
+
+      Build the library once on a show and stop rebuilding the same poses shot after shot.
+
+      Rs 5,000 one-time. Lifetime licence, 2 devices, Maya 2022-2027.
+    hashtags: ["maya", "mayaanimation", "animationtools", "poselibrary", "3danimation", "animbelt", "riggingtools", "vfx", "animationworkflow", "autodeskmaya"]
+
+  - id: belt-03
+    eyebrow: "ANIMBELT / MM RETARGET"
+    headline: "Mocap skeleton\nto your rig.\nWithout the pain."
+    sub: "Locator-driven retargeting that respects rotate orders."
+    bullets:
+      - "Skeleton to control-rig transfer"
+      - "Rotate-order safe"
+      - "Inside AnimBelt"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "Retargeting usually fails on the boring stuff - rotate orders, offsets, namespaces."
+    caption_body: |
+      MM Retarget inside AnimBelt moves animation from a skeleton onto your control rig using a locator engine, and handles the rotate-order and offset cases that quietly destroy most transfers.
+
+      Less cleanup, more animating.
+
+      Rs 5,000 one-time, lifetime, 2 devices, Maya 2022-2027.
+    hashtags: ["maya", "mocap", "retargeting", "mayaanimation", "animationtools", "3danimation", "animbelt", "vfx", "animationworkflow", "autodeskmaya"]
+
+  - id: belt-04
+    eyebrow: "ANIMBELT"
+    headline: "Rs 5,000.\nOnce.\nThat's it."
+    sub: "No subscription, no seats, no renewal emails."
+    bullets:
+      - "Lifetime licence, 2 devices"
+      - "Free updates"
+      - "Maya 2022 - 2027"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "Every tool wants a monthly subscription now. AnimBelt doesn't."
+    caption_body: |
+      Rs 5,000, one time, lifetime licence, two devices, free updates. That's the whole pricing page.
+
+      It's a full Maya animation toolkit - pose and anim library, retargeting, curve tools, camera splits, reference playback - built by someone who animates for a living and got tired of doing the same manual work every shot.
+    hashtags: ["maya", "autodeskmaya", "mayaanimation", "animationtools", "animbelt", "3danimation", "vfx", "animationworkflow", "characteranimation", "animator"]
+
+  - id: belt-05
+    eyebrow: "ANIMBELT / LCURVE"
+    headline: "Draw a curve.\nGet soft\ncontrols."
+    sub: "LCurve turns a stroke on your mesh into a usable deformer rig."
+    bullets:
+      - "Live curve rig, straight on the mesh"
+      - "Soft, animator-friendly controls"
+      - "Inside AnimBelt"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "Sometimes the rig just doesn't give you the control the shot needs."
+    caption_body: |
+      LCurve inside AnimBelt lets you draw a curve directly on the mesh and get soft, animatable controls from it - for the fix-it deformations every shot eventually needs and no rigger planned for.
+
+      Rs 5,000 one-time. Lifetime licence, 2 devices, Maya 2022-2027.
+    hashtags: ["maya", "mayarigging", "animationtools", "deformers", "mayaanimation", "animbelt", "3danimation", "vfx", "riggingtools", "autodeskmaya"]
+
+  - id: belt-06
+    eyebrow: "ANIMBELT"
+    headline: "Hours saved\nevery week.\nEvery shot."
+    sub: "The small stuff, automated. The animation, still yours."
+    bullets:
+      - "One toolkit, whole workflow"
+      - "Built on real production shots"
+      - "Rs 5,000 lifetime, 2 devices"
+    cta: "Buy AnimBelt"
+    cta_link: animbelt
+    caption_hook: "Ten minutes here, twenty there. That's a full day a week you're not animating."
+    caption_body: |
+      AnimBelt collapses the repetitive parts of a Maya animation day - posing, transferring, cleaning curves, splitting cameras, checking reference - into a single toolkit that stays out of your way.
+
+      It's the tool I built for myself first, on real production shots. Rs 5,000 one-time, lifetime licence, 2 devices, Maya 2022-2027.
+    hashtags: ["maya", "autodeskmaya", "mayaanimation", "animationtools", "animbelt", "animationworkflow", "3danimation", "vfx", "characteranimation", "animator"]

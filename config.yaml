@@ -1,0 +1,72 @@
+# ============================================================
+# MM Promo Bot - single place to change behaviour.
+# Edit this file, commit, done. No code changes needed.
+# ============================================================
+
+brand:
+  name: "Mythical Motions"
+  handle: "@mythicalmotions"
+  site_label: "mythicalmotions.com"
+  bg: "#0E0E11"
+  bg_2: "#16161B"
+  gold: "#D9AE6B"
+  gold_soft: "#F0D7AA"
+  ink_on_gold: "#12120F"
+  text: "#F4F1EA"
+  muted: "#9A968D"
+  display_font: "Outfit"
+  body_font: "Inter"
+
+links:
+  site: "https://mythicalmotions.com"
+  animbelt: "https://mythicalmotions.com/animbelt"
+  mentorship: "https://mythicalmotions.com/mentorship"
+  courses: "https://mythicalmotions.com/courses/pre-recorded"
+  discord: "https://discord.gg/suMy2Z7CHa"
+
+schedule:
+  # Post every N days. propose.yml runs daily and this gate decides.
+  interval_days: 3
+  # If nobody reacts on Discord within this many hours, post anyway.
+  auto_approve_hours: 4
+  # Never auto-publish outside this IST window (protects against 3am posts).
+  ist_publish_window: [9, 22]
+
+tracks:
+  # Order the bot cycles through. Repeat a name to weight it heavier.
+  rotation: ["mentorship", "animbelt"]
+
+platforms:
+  # Instagram = STORY only (Meta gives no API for story captions or link
+  # stickers, so all the text is burned into the 9:16 image itself).
+  instagram_story: true
+  facebook: true
+  linkedin: true
+  # Posts into your Discord community channel. Needs DISCORD_POST_WEBHOOK_URL,
+  # which must be a DIFFERENT channel from the approval webhook - otherwise
+  # your members see the "post this?" preview.
+  discord: true
+
+render:
+  # story  -> Instagram Story (9:16, text burned in)
+  # square -> Facebook + LinkedIn feed (caption carries the description)
+  story:  { width: 1080, height: 1920, variant: story }
+  square: { width: 1200, height: 1200, variant: card }
+  scale: 1
+
+# which rendered image each platform uses
+image_for:
+  instagram_story: story
+  facebook: square
+  linkedin: square
+  discord: square
+
+facebook:
+  # Facebook Page "Mythical Motions"
+  page_id: "1276111598923180"
+
+linkedin:
+  api_version: "202506"
+  # LinkedIn member tokens last ~60 days. Warn on Discord this many days before.
+  token_warn_days_before_expiry: 12
+  token_lifetime_days: 60
