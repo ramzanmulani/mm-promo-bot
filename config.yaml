@@ -41,7 +41,7 @@ platforms:
   # stickers, so all the text is burned into the 9:16 image itself).
   instagram_story: true
   facebook: true
-  linkedin: true
+  linkedin: false
   # Posts into your Discord community channel. Needs DISCORD_POST_WEBHOOK_URL,
   # which must be a DIFFERENT channel from the approval webhook - otherwise
   # your members see the "post this?" preview.
