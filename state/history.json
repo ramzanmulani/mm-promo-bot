@@ -1,8 +1,9 @@
 {
   "last_posted_at": null,
-  "rotation_index": 1,
+  "rotation_index": 0,
   "track_cursor": {
-    "mentorship": 1
+    "mentorship": 1,
+    "animbelt": 1
   },
   "posted": []
 }

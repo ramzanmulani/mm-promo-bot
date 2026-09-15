@@ -1,0 +1,31 @@
+{
+  "post_id": "belt-01",
+  "track": "animbelt",
+  "slug": "20260915-belt-01",
+  "created_at": "2026-09-15T13:25:40+00:00",
+  "discord_message_id": "1549410878426972265",
+  "approval_mode": "webhook",
+  "dry_run": false,
+  "attempts": 0,
+  "platforms": [
+    "instagram_story",
+    "facebook",
+    "discord"
+  ],
+  "alt_text": "ANIMBELT FOR MAYA — Built by an animator who got tired.",
+  "images": {
+    "square": "/home/runner/work/mm-promo-bot/mm-promo-bot/out/20260915-belt-01-square.png",
+    "story": "/home/runner/work/mm-promo-bot/mm-promo-bot/out/20260915-belt-01-story.png"
+  },
+  "image_urls": {
+    "square": "https://ramzanmulani.github.io/mm-promo-bot/img/20260915-belt-01-square.png",
+    "story": "https://ramzanmulani.github.io/mm-promo-bot/img/20260915-belt-01-story.png"
+  },
+  "captions": {
+    "linkedin": "I built AnimBelt because I was losing hours a week to things Maya should already do.\n\nPose libraries, retargeting, curve cleanup, camera splits, reference playback - all the small repetitive jobs that sit between you and the part you actually enjoy.\n\nOne toolkit. One install. Rs 5,000 one-time, lifetime licence, 2 devices, and it works across Maya 2022 to 2027.\n\n→ Buy AnimBelt: https://mythicalmotions.com/animbelt\n→ Free mentorship demo: https://mythicalmotions.com/mentorship\n→ Everything else: https://mythicalmotions.com\n→ Free animator Discord: https://discord.gg/suMy2Z7CHa\n\n#maya #autodeskmaya #mayaanimation #animationtools",
+    "facebook": "I built AnimBelt because I was losing hours a week to things Maya should already do.\n\nPose libraries, retargeting, curve cleanup, camera splits, reference playback - all the small repetitive jobs that sit between you and the part you actually enjoy.\n\nOne toolkit. One install. Rs 5,000 one-time, lifetime licence, 2 devices, and it works across Maya 2022 to 2027.\n\n→ Buy AnimBelt: https://mythicalmotions.com/animbelt\n→ Free mentorship demo: https://mythicalmotions.com/mentorship\n→ Everything else: https://mythicalmotions.com\n→ Free animator Discord: https://discord.gg/suMy2Z7CHa\n\n#maya #autodeskmaya #mayaanimation #animationtools #3danimation #animbelt",
+    "discord": "I built AnimBelt because I was losing hours a week to things Maya should already do.\n\nPose libraries, retargeting, curve cleanup, camera splits, reference playback - all the small repetitive jobs that sit between you and the part you actually enjoy.\n\nOne toolkit. One install. Rs 5,000 one-time, lifetime licence, 2 devices, and it works across Maya 2022 to 2027.\n\n→ Buy AnimBelt: https://mythicalmotions.com/animbelt\n→ Free mentorship demo: https://mythicalmotions.com/mentorship\n→ Everything else: https://mythicalmotions.com"
+  },
+  "done": [],
+  "results": {}
+}
