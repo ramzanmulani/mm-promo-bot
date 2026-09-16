@@ -6,7 +6,7 @@
   "discord_message_id": "1549410878426972265",
   "approval_mode": "webhook",
   "dry_run": false,
-  "attempts": 0,
+  "attempts": 1,
   "platforms": [
     "instagram_story",
     "facebook",
