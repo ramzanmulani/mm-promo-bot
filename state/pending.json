@@ -1,0 +1,31 @@
+{
+  "post_id": "mentor-02",
+  "track": "mentorship",
+  "slug": "20260917-mentor-02",
+  "created_at": "2026-09-17T13:21:15+00:00",
+  "discord_message_id": "1550134542390665329",
+  "approval_mode": "webhook",
+  "dry_run": false,
+  "attempts": 0,
+  "platforms": [
+    "instagram_story",
+    "facebook",
+    "discord"
+  ],
+  "alt_text": "1:1 MENTORSHIP — Your reel isn't weak. It's unfocused.",
+  "images": {
+    "square": "/home/runner/work/mm-promo-bot/mm-promo-bot/out/20260917-mentor-02-square.png",
+    "story": "/home/runner/work/mm-promo-bot/mm-promo-bot/out/20260917-mentor-02-story.png"
+  },
+  "image_urls": {
+    "square": "https://ramzanmulani.github.io/mm-promo-bot/img/20260917-mentor-02-square.png",
+    "story": "https://ramzanmulani.github.io/mm-promo-bot/img/20260917-mentor-02-story.png"
+  },
+  "captions": {
+    "linkedin": "Nobody gets rejected for having too few shots. They get rejected for having the wrong ones.\n\nA reel with 3 strong shots beats a reel with 9 average ones, every single time. Recruiters stop watching in 12 seconds.\n\nIn mentorship I go through your reel the way a lead would: what stays, what gets cut, what gets rebuilt, and in what order - so you stop spending months polishing shots that were never going to land you the job.\n\nBook the free demo and bring your current reel.\n\n→ Get your reel reviewed: https://mythicalmotions.com/mentorship\n→ AnimBelt (Maya toolkit): https://mythicalmotions.com/animbelt\n→ Everything else: https://mythicalmotions.com\n→ Free animator Discord: https://discord.gg/suMy2Z7CHa\n\n#animationreel #demoreel #animationportfolio #3danimation",
+    "facebook": "Nobody gets rejected for having too few shots. They get rejected for having the wrong ones.\n\nA reel with 3 strong shots beats a reel with 9 average ones, every single time. Recruiters stop watching in 12 seconds.\n\nIn mentorship I go through your reel the way a lead would: what stays, what gets cut, what gets rebuilt, and in what order - so you stop spending months polishing shots that were never going to land you the job.\n\nBook the free demo and bring your current reel.\n\n→ Get your reel reviewed: https://mythicalmotions.com/mentorship\n→ AnimBelt (Maya toolkit): https://mythicalmotions.com/animbelt\n→ Everything else: https://mythicalmotions.com\n→ Free animator Discord: https://discord.gg/suMy2Z7CHa\n\n#animationreel #demoreel #animationportfolio #3danimation #mayaanimation #characteranimation",
+    "discord": "Nobody gets rejected for having too few shots. They get rejected for having the wrong ones.\n\nA reel with 3 strong shots beats a reel with 9 average ones, every single time. Recruiters stop watching in 12 seconds.\n\nIn mentorship I go through your reel the way a lead would: what stays, what gets cut, what gets rebuilt, and in what order - so you stop spending months polishing shots that were never going to land you the job.\n\nBook the free demo and bring your current reel.\n\n→ Get your reel reviewed: https://mythicalmotions.com/mentorship\n→ AnimBelt (Maya toolkit): https://mythicalmotions.com/animbelt\n→ Everything else: https://mythicalmotions.com"
+  },
+  "done": [],
+  "results": {}
+}
